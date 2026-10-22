@@ -1,0 +1,18 @@
+from src.text_splitter import split_paragraphs
+
+
+def test_split_paragraphs():
+    text = (
+        "The first paragraph.\n\n"
+        "The second paragraph."
+    )
+
+    result = split_paragraphs(text)
+
+    assert len(result) == 2
+    assert result[0] == "The first paragraph."
+    assert result[1] == "The second paragraph."
+
+
+def test_empty_text():
+    assert split_paragraphs("") == []
